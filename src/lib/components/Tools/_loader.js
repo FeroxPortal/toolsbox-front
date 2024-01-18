@@ -1,1 +1,1 @@
-export { json as default } from './Json.svelte'
+export { default as Json } from './Json.svelte'

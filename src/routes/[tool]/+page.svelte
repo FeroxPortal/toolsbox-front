@@ -1,11 +1,12 @@
 <script>
-
+    import HomeLink from '../../lib/components/HomeLink.svelte';
     import { Json } from '../../lib/components/Tools/_loader'
 
     export let data
-    console.log("Response client", data)
+    const tool = data
 </script>
 
-{#if data.path === "json"}
-    <Json />
+<HomeLink />
+{#if tool.path === "json"}
+    <Json {tool} />
 {/if}
