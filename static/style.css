@@ -10,3 +10,9 @@ body{
     font-family: "Press Start 2P";
     background-color: var(--dark);
 }
+
+h1{
+    text-align: center;
+    color: var(--white);
+    text-shadow: 1px 1px 5px var(--white);
+}
