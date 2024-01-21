@@ -1,21 +1,45 @@
 <script>
-    export let tool
-    console.log(tool)
 
+    import { load } from '$lib/client/sendData'
+    
+    export let tool
+
+
+    const config = [
+        {
+            "name":"data",
+            "placeholder":"Data to encode",
+            "id":"dataEncode",
+            "target":"dataDecode",
+            "submit":"Encode data",
+            "path":tool.back+"/encode"
+        },{
+            "name":"data",
+            "placeholder":"Data to decode",
+            "id":"dataDecode",
+            "target":"dataEncode",
+            "submit":"Decode data",
+            "path":tool.back+"/decode"
+        }
+    ]
+    console.log(config)
 
 </script>
 
 <h1>{tool.name}</h1>
 
 <div class="flex">
-    <form method="POST" class="flex-inline"
-    data-path={tool.back}>
-        <textarea placeholder="Data to encode" name="data"></textarea>
-        <button type="submit">Encode data</button>
-    </form>
-    <div class="flex-inline">
-        <textarea placeholder="Data to encode" name="{tool.back}[decpde]"></textarea>
-    </div>
+    {#each config as action}
+        <form method="POST" class="flex-inline"
+        data-path={action.path}
+        data-target={action.target}
+        on:submit|preventDefault={load}>
+            <textarea id={action.id} 
+            placeholder={action.placeholder} 
+            name={action.name}></textarea>
+            <button type="submit">{action.submit}</button>
+        </form>
+    {/each}
 </div>
 
 <style>

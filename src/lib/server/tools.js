@@ -1,7 +1,7 @@
-import { API_URL } from '$env/static/private'
+import { PUBLIC_API_URL } from '$env/static/public'
 
 export async function load(){
-    const res = await fetch(API_URL+"/tools", {
+    const res = await fetch(PUBLIC_API_URL+"/tools", {
         method: "GET"
     })
     const response = await res.json()

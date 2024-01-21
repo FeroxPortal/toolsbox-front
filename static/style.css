@@ -11,6 +11,11 @@ body{
     background-color: var(--dark);
 }
 
+.bg-danger{
+    background: var(--danger) !important;
+    color: var(--white);
+}
+
 h1{
     text-align: center;
     color: var(--white);

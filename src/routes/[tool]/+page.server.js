@@ -10,14 +10,3 @@ export async function load({params}){
     }
     return data.data
 }
-
-
-export const actions = {
-	default: async (event) => {
-        const formElement = event.currentTarget;
-
-        const data = await event.request.formData();
-        console.log("Event",formElement)
-        console.log("Request", data)
-	}
-};
