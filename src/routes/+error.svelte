@@ -1,13 +1,13 @@
 <script>
     import { page } from '$app/stores'
-    console.log(page)
 </script>
 
-<h1>{$page.error.message}</h1>
+<h1>{$page.status}</h1>
+<h2>{$page.error.message}</h2>
 
 <style>
     h1{
         color: var(--danger);
-        text-align: center;
+        text-shadow: 1px 1px 5px var(--danger);
     }
 </style>

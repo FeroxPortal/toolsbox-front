@@ -32,11 +32,22 @@
         margin: 0.4rem;
         transition-duration: 0.4s;
         opacity: 1;
-        padding: 2rem;
-        font-size: 2rem;
         color: var(--white);
         text-decoration: none;
         border: 2px transparent solid;
+    }
+    @media (min-width: 768px) {
+        .tool{
+            padding: 2rem;
+            font-size: 2rem;
+        }
+    }
+    @media (max-width: 767px) {
+        .tool{
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+        }
     }
     .tool:hover{
         background-color: transparent !important;

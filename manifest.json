@@ -1,0 +1,10 @@
+{
+    "name": "Toolsbox 4 DEV",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "Extension to access some dev tools",
+    "brower_action":{
+        "default_icon": "icon.png",
+        "default_popup": "index.html"
+    }
+}

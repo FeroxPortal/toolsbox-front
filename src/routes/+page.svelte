@@ -9,7 +9,7 @@
     {#each data.tools as tool}
         <Tool {tool} />
     {/each}
-</div>
+</div>  
 
 <style>
     #tools{

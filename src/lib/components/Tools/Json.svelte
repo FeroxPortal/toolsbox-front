@@ -1,6 +1,7 @@
 <script>
 
     import { load } from '$lib/client/sendData'
+    import Copy from '../Copy.svelte';
     
     export let tool
 
@@ -14,6 +15,7 @@
             "submit":"Encode data",
             "path":tool.back+"/encode"
         },{
+            "copy":true,
             "name":"data",
             "placeholder":"Data to decode",
             "id":"dataDecode",
@@ -25,6 +27,11 @@
     console.log(config)
 
 </script>
+
+<svelte:head>
+	<title>ToolsBox 4 DEV | {tool.name}</title>
+	<meta name="description" content="Encode and decode data to JSON">
+</svelte:head>
 
 <h1>{tool.name}</h1>
 
@@ -38,27 +45,9 @@
             placeholder={action.placeholder} 
             name={action.name}></textarea>
             <button type="submit">{action.submit}</button>
+            {#if action.copy}
+                <Copy target={"#"+action.id} />
+            {/if}
         </form>
     {/each}
 </div>
-
-<style>
-    .flex{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-    }
-    .flex-inline{
-        display: inline-flex;
-        width: 35%;
-        padding: 1rem;
-    }
-    textarea{
-        min-height: 250px;
-    }
-    h1 {
-        text-align: center;
-        view-transition-name: header;
-    }
-</style>

@@ -11,6 +11,9 @@ export async function load(data){
       method: "POST",
       body: new FormData(form),
       redirect: 'follow',
+      dataType:'json',
+      processData: false,
+      contentType: false,
     })
     const result = await response.json()
     if(!response.ok) {
@@ -18,18 +21,19 @@ export async function load(data){
       return
     }
     target.value = result.data
-
+    return result
   }catch(error) {
     toast(error.message)
     console.log("Erreur FETCH", error)
+    return error
   }
-}
+} 
 
-function toast(message, duration=3000){
+export function toast(message, className="bg-danger", duration=3000){
   Toastify({
     text: message,
     duration: duration,
-    className: "bg-danger",
+    className: className,
     close: true,
     gravity: "bottom",
     position: "left",
