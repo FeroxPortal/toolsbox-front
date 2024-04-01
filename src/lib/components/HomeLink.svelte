@@ -1,5 +1,5 @@
 <a href="/">
-    Retour
+    Back
 </a>
 
 <style>

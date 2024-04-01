@@ -36,7 +36,7 @@
         transition-duration: 0.4s;
     }
     button:hover{
-        background-color: transparent;
+        background-color: var(--dark);
         color: var(--info);
         cursor: pointer;
         border: 3px var(--info) solid;

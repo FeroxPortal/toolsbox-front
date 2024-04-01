@@ -27,11 +27,11 @@
     data-target={config.target}
     on:submit|preventDefault={load}>
         <input type="number" name="length"
-        id="length" placeholder="Longueur" required />
-        <select id="symbols" name="symbols" placeholder="Symbols">
-            <option value="" selected="selected" disabled readonly>Symboles</option>
-            <option value="1">Oui</option>
-            <option value="0">Non</option>
+        id="length" placeholder="Length" required />
+        <select id="symbols" name="symbols" placeholder="Symbols" required>
+            <option value="" selected="selected" disabled readonly>Symbols</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
         </select>
         <button type="submit">{config.submit}</button>
     </form>

@@ -11,7 +11,9 @@
         PasswordHash, 
         PasswordVerify, 
         Sha1, 
-        Uuid 
+        Uuid,
+        ImageWebp,
+        ImageAvif
     } from '../../lib/components/Tools/_loader'
 
     export let data
@@ -37,4 +39,8 @@
     <PasswordGenerator {tool} />
 {:else if tool.component === "Uuid"}
     <Uuid {tool} />
+{:else if tool.component === "ImageWebp"}
+    <ImageWebp {tool} />
+{:else if tool.component === "ImageAvif"}
+    <ImageAvif {tool} />
 {/if}

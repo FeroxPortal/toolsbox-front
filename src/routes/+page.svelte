@@ -19,4 +19,11 @@
         justify-content: center;
         align-items: center;
     }
+    @media (min-width: 768px) {
+        #tools{
+            text-align: center;
+            margin: auto;
+            max-width: 80%;
+        }
+    }
 </style>

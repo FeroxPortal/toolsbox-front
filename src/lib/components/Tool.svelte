@@ -21,36 +21,40 @@
 </script>
 
 {#if !visible}
-    <style>.tool{opacity:0;}</style>
+    <style>a{opacity:0;}</style>
 {/if}   
-<a href="{tool.path}" class="tool" style="background-color: {color};">
+<a href="{tool.path}" style="--color:{color};">
     {tool.name}
 </a>
 
 <style>
-    .tool{
+    a{
         margin: 0.4rem;
         transition-duration: 0.4s;
         opacity: 1;
         color: var(--white);
         text-decoration: none;
-        border: 2px transparent solid;
+        border: 3px transparent solid;
+        background-color: var(--color);
+        box-shadow: 0 0 10px 3px var(--dark);
     }
     @media (min-width: 768px) {
-        .tool{
-            padding: 2rem;
-            font-size: 2rem;
+        a{
+            padding: 1.5rem;
+            font-size: 1.5rem;
         }
     }
     @media (max-width: 767px) {
-        .tool{
+        a{
             width: 100%;
             padding: 1rem;
             font-size: 1rem;
         }
     }
-    .tool:hover{
-        background-color: transparent !important;
-        border: 2px var(--white) solid;
+    a:hover{
+        background-color: var(--dark) !important;
+        color: var(--color);
+        border: 3px var(--color) solid;
+        transform: scale(1.05);
     }
 </style>
