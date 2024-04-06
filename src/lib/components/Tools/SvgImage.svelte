@@ -7,11 +7,11 @@
 
     const config = {
         "name":"data",
-        "placeholder":"Image to Avif",
+        "placeholder":"SVG content to image",
         "id":"dataEncode",
         "target":"dataImage",
         "targetRaw":"dataImageRaw",
-        "submit":"Encode image to Avif",
+        "submit":"Transform",
         "path":tool.back
     }
 
@@ -28,7 +28,7 @@
 
 <svelte:head>
 	<title>ToolsBox 4 DEV | {tool.name}</title>
-	<meta name="description" content="Encode a file to Avif format">
+	<meta name="description" content="Transform your raw svg content to a file">
 </svelte:head>
 
 <h1>{tool.name}</h1>
@@ -38,9 +38,9 @@
     data-path={config.path}
     data-target={config.target}
     on:submit|preventDefault={loadData}>
-        <input type="file" id={config.id} 
+        <textarea id={config.id} 
         placeholder={config.placeholder} 
-        name={config.name} />
+        name={config.name}></textarea>
         <button type="submit">{config.submit}</button>
     </form>
     <Copy target={"#"+config.targetRaw} />

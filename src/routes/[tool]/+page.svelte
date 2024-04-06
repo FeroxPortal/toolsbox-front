@@ -13,7 +13,8 @@
         Sha1, 
         Uuid,
         ImageWebp,
-        ImageAvif
+        ImageAvif,
+        SvgImage
     } from '../../lib/components/Tools/_loader'
 
     export let data
@@ -43,4 +44,6 @@
     <ImageWebp {tool} />
 {:else if tool.component === "ImageAvif"}
     <ImageAvif {tool} />
+{:else if tool.component === "SvgImage"}
+    <SvgImage {tool} />
 {/if}

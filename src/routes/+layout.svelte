@@ -13,13 +13,8 @@
 	});
 </script>
 
-
-<svelte:head>
-	<title>ToolsBox 4 DEV</title>
-	<meta name="description" content="ToolsBox 4 DEV">
-</svelte:head>
-
 <div id="back"></div>
+
 <div id="main">
 	<slot></slot>
 </div>

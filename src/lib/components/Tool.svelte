@@ -36,11 +36,11 @@
         text-decoration: none;
         border: 3px transparent solid;
         background-color: var(--color);
-        box-shadow: 0 0 10px 3px var(--dark);
+        box-shadow: 0 0 10px 1px var(--dark);
     }
     @media (min-width: 768px) {
         a{
-            padding: 1.5rem;
+            padding: 1.2rem;
             font-size: 1.5rem;
         }
     }

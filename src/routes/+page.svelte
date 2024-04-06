@@ -1,10 +1,19 @@
 <script>
+    import Logo from '../lib/components/Logo.svelte';
     import Tool from '../lib/components/Tool.svelte';
 
     export let data
 </script>
 
-<h1>ToolsBox 4 DEV</h1>
+<svelte:head>
+	<title>ToolsBox 4 DEV</title>
+	<meta name="description" content="ToolsBox 4 DEV">
+</svelte:head>
+
+<h1>
+    <Logo width=450 />
+</h1>   
+
 <div id="tools">
     {#each data.tools as tool}
         <Tool {tool} />
@@ -13,6 +22,7 @@
 
 <style>
     #tools{
+        padding-top: 2rem;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
