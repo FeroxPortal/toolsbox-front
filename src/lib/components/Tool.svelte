@@ -43,6 +43,9 @@
             padding: 1.2rem;
             font-size: 1.5rem;
         }
+        a:hover{
+            transform: scale(1.05);
+        }
     }
     @media (max-width: 767px) {
         a{
@@ -55,6 +58,5 @@
         background-color: var(--dark) !important;
         color: var(--color);
         border: 3px var(--color) solid;
-        transform: scale(1.05);
     }
 </style>

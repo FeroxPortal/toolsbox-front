@@ -3,15 +3,18 @@
     import Tool from '../lib/components/Tool.svelte';
 
     export let data
+
+    const siteName = "ToolsBox 4 DEV"
+
 </script>
 
 <svelte:head>
-	<title>ToolsBox 4 DEV</title>
-	<meta name="description" content="ToolsBox 4 DEV">
+	<title>{siteName}</title>
+	<meta name="description" content="{siteName}">
 </svelte:head>
 
 <h1>
-    <Logo width=450 />
+    <img src="./images/logo.svg" alt="{siteName}" />
 </h1>   
 
 <div id="tools">
@@ -21,19 +24,28 @@
 </div>  
 
 <style>
+
+    @media (min-width: 768px) {
+        img{
+            width: 650px;
+        }
+        #tools{
+            text-align: center;
+            margin: auto;
+        }
+    }
     #tools{
-        padding-top: 2rem;
+        max-width: 100%;
+        padding-top: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 991px) {
         #tools{
-            text-align: center;
-            margin: auto;
-            max-width: 80%;
+            max-width: 75%;
         }
     }
 </style>
