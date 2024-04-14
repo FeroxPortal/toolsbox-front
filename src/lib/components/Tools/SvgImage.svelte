@@ -15,11 +15,12 @@
         "path":tool.back
     }
 
+    let result
+
     async function loadData(data){
         const response = await load(data)
         if(response.data){
-            document.getElementById(config.target).src = response.data
-            document.getElementById(config.targetRaw).value = response.data
+            result = response.data
         }
     }
 
@@ -36,25 +37,25 @@
 <div class="flex">
     <form method="POST"
     data-path={config.path}
-    data-target={config.target}
     on:submit|preventDefault={loadData}>
         <textarea id={config.id} 
         placeholder={config.placeholder} 
         name={config.name}></textarea>
         <button type="submit">{config.submit}</button>
     </form>
-    <Copy target={"#"+config.targetRaw} />
-    <textarea id={config.targetRaw} type="text" value=""></textarea>
-    <img id={config.target} src="https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg" alt="Base64 Image" />
+    {#if result}
+        <Copy target={"#"+config.targetRaw} />
+        <textarea id={config.targetRaw}>{result}</textarea>
+        <img id={config.target} src="{result}" alt="Base64 Image" />
+    {/if}
 </div>
 
 <style>
     img{
         width: 100%;
     }
-    input{
-        color: #fff;
-        margin-bottom: 1rem;
+    button{
+        width: 100%;
     }
     .flex{
         width: 33%;

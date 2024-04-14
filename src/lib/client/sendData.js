@@ -6,7 +6,10 @@ export async function load(data){
   const form = data.currentTarget
   try{
     const apiURL = form.getAttribute("data-path")
-    const target = document.getElementById(form.getAttribute("data-target"))
+    let target=null
+    if(form.getAttribute("data-target")){
+      target = document.getElementById(form.getAttribute("data-target"))
+    }
     const response = await fetch(PUBLIC_API_URL+"/"+apiURL, {
       method: "POST",
       body: new FormData(form),
@@ -20,7 +23,9 @@ export async function load(data){
       toast(result.data)
       return
     }
-    target.value = result.data
+    if(target !== null){
+      target.value = result.data
+    } 
     return result
   }catch(error) {
     toast(error.message)
@@ -28,6 +33,24 @@ export async function load(data){
     return error
   }
 } 
+
+export async function fetchAPI(path){
+  try{
+    path = PUBLIC_API_URL+"/"+path
+    const response = await fetch(path)
+    const result = await response.json()
+    if(!response.ok) {
+      toast(result.data)
+      return
+    }
+    result.path = path
+    return result
+  }catch(error) { 
+    toast(error.message)
+    console.log("Erreur FETCH", error)
+    return error
+  }
+}
 
 export function toast(message, className="bg-danger", duration=3000){
   Toastify({

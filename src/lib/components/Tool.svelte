@@ -4,13 +4,14 @@
     export let tool
     let visible = false
 
-    let color = null
+    let bg
+    let color = "rgb(255,255,255)"
 
     function randomColor(){
-        const r = Math.floor(Math.random() * 256)
-        const g = Math.floor(Math.random() * 256)
-        const b = Math.floor(Math.random() * 256)
-        color = `rgb(${r},${g},${b})`
+        const r = Math.floor(Math.random() * 170)
+        const g = Math.floor(Math.random() * 170)
+        const b = Math.floor(Math.random() * 170)
+        bg = `rgb(${r},${g},${b})`
     }
     randomColor()
 
@@ -23,7 +24,7 @@
 {#if !visible}
     <style>a{opacity:0;}</style>
 {/if}   
-<a href="{tool.path}" style="--color:{color};">
+<a href="{tool.path}" style="--bg:{bg};--color:{color}">
     {tool.name}
 </a>
 
@@ -32,10 +33,10 @@
         margin: 0.4rem;
         transition-duration: 0.4s;
         opacity: 1;
-        color: var(--white);
+        color: var(--color);
         text-decoration: none;
         border: 3px transparent solid;
-        background-color: var(--color);
+        background-color: var(--bg);
         box-shadow: 0 0 10px 1px var(--dark);
     }
     @media (min-width: 768px) {
@@ -56,7 +57,7 @@
     }
     a:hover{
         background-color: var(--dark) !important;
-        color: var(--color);
-        border: 3px var(--color) solid;
+        color: var(--bg);
+        border: 3px var(--bg) solid;
     }
 </style>

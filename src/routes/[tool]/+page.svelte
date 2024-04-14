@@ -14,7 +14,8 @@
         Uuid,
         ImageWebp,
         ImageAvif,
-        SvgImage
+        SvgImage,
+        QrCodeGenerate
     } from '../../lib/components/Tools/_loader'
 
     export let data
@@ -46,4 +47,6 @@
     <ImageAvif {tool} />
 {:else if tool.component === "SvgImage"}
     <SvgImage {tool} />
+{:else if tool.component === "QrCodeGenerate"}
+    <QrCodeGenerate {tool} />
 {/if}
