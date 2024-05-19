@@ -1,5 +1,4 @@
 <script>
-    import Logo from '../lib/components/Logo.svelte';
     import Tool from '../lib/components/Tool.svelte';
 
     export let data
@@ -13,6 +12,7 @@
 	<meta name="description" content="{siteName}">
 </svelte:head>
 
+
 <h1>
     <img src="./images/logo.svg" alt="{siteName}" />
 </h1>   
@@ -23,7 +23,16 @@
     {/each}
 </div>  
 
+<a href="/donate">Buy me a coffee</a>
+
 <style>
+
+    a{
+        display: flex;
+        margin: 2rem auto 1rem auto;
+        text-align: center;
+        width: fit-content;
+    }
 
     @media (min-width: 768px) {
         img{
