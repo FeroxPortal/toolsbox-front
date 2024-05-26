@@ -1,4 +1,5 @@
 <script>
+    import FaCoffee from 'svelte-icons/fa/FaCoffee.svelte'
     import Tool from '../lib/components/Tool.svelte';
 
     export let data
@@ -23,7 +24,11 @@
     {/each}
 </div>  
 
-<a href="/donate">Buy me a coffee</a>
+<a href="/donate">
+    <i class="icon">
+        <FaCoffee />
+    </i> Buy me a coffee
+</a>
 
 <style>
 
@@ -32,6 +37,19 @@
         margin: 2rem auto 1rem auto;
         text-align: center;
         width: fit-content;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 0.8rem;
+    }
+    a .icon{
+        width: 25px;
+        height: 25px;
+        padding-right: 0.5rem;
     }
 
     @media (min-width: 768px) {

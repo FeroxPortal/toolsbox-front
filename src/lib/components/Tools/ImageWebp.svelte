@@ -2,6 +2,7 @@
 
     import { load } from '$lib/client/sendData'
     import Copy from '../Copy.svelte';
+    import Submit from '../Submit.svelte';
     
     export let tool
 
@@ -15,14 +16,18 @@
         "path":tool.back
     }
 
-
     let result
+    let state = false
 
     async function loadData(data){
+        state = !state
         const response = await load(data)
-        if(response.data){
-            result = response.data
+        if(response === undefined){
+            state = !state
+            return
         }
+        result = response.data
+        state = !state
     }
 
 
@@ -42,7 +47,8 @@
         <input type="file" id={config.id} 
         placeholder={config.placeholder} 
         name={config.name} />
-        <button type="submit">{config.submit}</button>
+        <Submit bind:state 
+            title={config.submit} />
     </form>
     {#if result !== undefined}
         <Copy target={"#"+config.targetRaw} />
@@ -67,10 +73,6 @@
         align-items: center;
     }
     @media (max-width: 768px) {
-        button{
-            display: block;
-            width: 100%;
-        }
         .flex{
             width: 100%;
         }
