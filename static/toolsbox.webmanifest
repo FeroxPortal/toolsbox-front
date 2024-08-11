@@ -1,0 +1,14 @@
+{
+    "name": "ToolsBox 4 DEV",
+    "short_name": "ToolsBox",
+    "start_url": "./?utm_source=web_app_manifest",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "images/favicon.svg",
+        "sizes": "48x48",
+        "type": "image/svg"
+      }
+    ]
+  }
+  
