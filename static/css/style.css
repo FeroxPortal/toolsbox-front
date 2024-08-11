@@ -7,15 +7,14 @@
     --info: #c28112;
     --white: #fff;
     --dark: #0a0a0a;
-    --gradient: linear-gradient(to right, rgb(0, 221, 255) 0%, rgb(255, 0, 212) 100%)
+    --gradient: linear-gradient(to left, var(--dark) 80%,#383838)
 }
 
 
 body{
     font-family: "Press Start 2P";
-    background: linear-gradient(to left, var(--dark) 80%,#383838);
+    background: var(--gradient);
     background-size: 400% 400%;
-    /*animation: gradient 60s ease infinite;*/
 }
     
 @keyframes drop{

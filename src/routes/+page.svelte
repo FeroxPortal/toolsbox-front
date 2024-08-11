@@ -34,17 +34,17 @@
 
     a{
         display: flex;
-        margin: 2rem auto 1rem auto;
+        padding: 1rem;
         text-align: center;
-        width: fit-content;
+        width: -webkit-fill-available;
         position: fixed;
         align-items: center;
         justify-content: center;
         bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
         color: #fff;
         font-size: 0.8rem;
+        background: var(--gradient);
+        background-size: 400% 400%;
     }
     a .icon{
         width: 25px;
