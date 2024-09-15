@@ -15,7 +15,8 @@
         ImageWebp,
         ImageAvif,
         SvgImage,
-        QrCodeGenerate
+        QrCodeGenerate,
+        LinkGenerate
     } from '../../lib/components/Tools/_loader'
 
     export let data
@@ -49,4 +50,6 @@
     <SvgImage {tool} />
 {:else if tool.component === "QrCodeGenerate"}
     <QrCodeGenerate {tool} />
+{:else if tool.component === "LinkGenerate"}
+    <LinkGenerate {tool} />
 {/if}

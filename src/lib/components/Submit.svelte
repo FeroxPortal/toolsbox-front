@@ -2,8 +2,8 @@
     export let title
     export let state = false
 
-    let disabled = ""
-    let readonly = ""
+    export let disabled = ""
+    export let readonly = ""
 
     if(state === true){
         disabled = "disabled"
@@ -15,7 +15,7 @@
 {#if state === true}
     <progress />
 {:else}
-    <button type="submit">
+    <button type="submit" {disabled} {readonly}>
         {title}
     </button>
 {/if}

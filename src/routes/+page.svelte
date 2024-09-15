@@ -16,7 +16,7 @@
 
 <h1>
     <img src="./images/logo.svg" alt="{siteName}" />
-</h1>   
+</h1>
 
 <div id="tools">
     {#each data.tools as tool}
@@ -72,7 +72,7 @@
     }
     @media (min-width: 991px) {
         #tools{
-            max-width: 75%;
+            max-width: 85%;
         }
     }
 </style>
