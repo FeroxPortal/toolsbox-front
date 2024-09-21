@@ -30,8 +30,8 @@
 
     function assignData(data){
         passwordRequest = {
-            raw: data["data"],
-            transformed: data["data"].replace(/(?:\r\n|\r|\n)/g, '<br>')
+            raw: data,
+            transformed: data.replace(/(?:\r\n|\r|\n)/g, '<br>')
         }
     }
 

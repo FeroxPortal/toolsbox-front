@@ -15,6 +15,7 @@
         href = undefined
         state = true
         const response = await load(data)
+        state = false
         if(response["status"] === 200){
             href = tool.back+"/"+response["data"]["idCrypt"]
             if(password !== ''){
