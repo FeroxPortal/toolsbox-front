@@ -21,7 +21,7 @@ export async function load(data){
     const result = await response.json()
     if(!response.ok) {
       toast(result.data)
-      return
+      return result
     }
     if(target !== null){
       target.value = result.data

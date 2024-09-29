@@ -59,6 +59,13 @@ body{
     display: none;
 }
 
+.alert{
+    background-color: var(--white);
+    color: var(--dark);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
 textarea, input, select{
     border: 0;
     padding: 0.5rem;

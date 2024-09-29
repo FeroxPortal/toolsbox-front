@@ -7,6 +7,7 @@
     import Submit from '$lib/components/Submit.svelte';
 
     export let data
+    console.log(data)   
 
     let value = ""
     let state = false
@@ -18,7 +19,7 @@
     let passwordRequest
     if(!data.passwordRequest){
         title = "Your password request"
-        assignData(data)
+        assignData(data["data"])
     } else{
         path = "link/"+data.passwordRequest
     }
