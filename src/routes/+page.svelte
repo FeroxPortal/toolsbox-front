@@ -24,13 +24,13 @@
     {/each}
 </div>  
 
-<a href="/donate">
+<a href="https://paypal.me/pixofheaven/2?country.x=FR&locale.x=fr_FR" target="_blank">
     <i class="icon">
         <FaCoffee />
     </i> Buy me a coffee
 </a>
 
-<style>
+<style> 
 
     a{
         display: flex;
